@@ -13,8 +13,7 @@ def create_screen():
 class System_testting(unittest.TestCase):
     # Пользователь начал новую игру, прыгнул, упал на враждебное препятствие, потерял часть здоровья
     def test_lost_health(self):
-        actions = [({pygame.K_RIGHT: False, pygame.K_LEFT: False, pygame.K_UP: True, pygame.K_DOWN: False,
-                     pygame.K_SPACE: False}, 0.01),
+        actions = [
                    ({pygame.K_RIGHT: True, pygame.K_LEFT: False, pygame.K_UP: False, pygame.K_DOWN: False,
                      pygame.K_SPACE: False}, 0.03),
                    ({pygame.K_RIGHT: False, pygame.K_LEFT: False, pygame.K_UP: False, pygame.K_DOWN: False,
