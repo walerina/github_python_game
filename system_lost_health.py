@@ -18,7 +18,7 @@ class System_testting(unittest.TestCase):
                    ({pygame.K_RIGHT: True, pygame.K_LEFT: False, pygame.K_UP: False, pygame.K_DOWN: False,
                      pygame.K_SPACE: False}, 0.03),
                    ({pygame.K_RIGHT: False, pygame.K_LEFT: False, pygame.K_UP: False, pygame.K_DOWN: False,
-                     pygame.K_SPACE: False}, 0.1)]
+                     pygame.K_SPACE: False}, 0.3)]
         test_level_map = [
             'XX                   W      ',
             'XX                   W      ',
