@@ -31,10 +31,12 @@ class System_testting(unittest.TestCase):
             'XXX EEEX  XXXXXXXXXX  XXX   ',
             'XXXXXXXX  XXXXXX  XX  XXXX  ',
             'XXXXXXXX  XXXXXX  XX  XXXX  ']
-        self.assertEqual(
-            menu.run(create_screen(), clock, pygame.event.Event(1025, {'pos': (589, 163), 'button': 1, 'touch': False,
+        res = menu.run(create_screen(), clock, pygame.event.Event(1025, {'pos': (589, 163), 'button': 1, 'touch': False,
                                                                        'window': None}), 0, actions, test_level_map,
-                     return_player=True, inc_time=10).healf, 6)
+                     return_player=True, inc_time=10)
+        print(res)
+        self.assertEqual(
+            res.healf, 6)
 
 if __name__ == '__main__':
     unittest.main()        
