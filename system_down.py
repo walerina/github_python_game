@@ -37,3 +37,6 @@ class System_testting(unittest.TestCase):
             menu.run(create_screen(), clock, pygame.event.Event(1025, {'pos': (589, 163), 'button': 1, 'touch': False,
                                                                        'window': None}), 0, actions, return_player=True,
                      inc_time=10).rect.h, 64)
+
+if __name__ == '__main__':
+    unittest.main()
