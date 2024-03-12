@@ -15,7 +15,7 @@ class System_testting(unittest.TestCase):
     def test_lost_health(self):
         actions = [
                    ({pygame.K_RIGHT: True, pygame.K_LEFT: False, pygame.K_UP: False, pygame.K_DOWN: False,
-                     pygame.K_SPACE: False}, 0.03),
+                     pygame.K_SPACE: False}, 0.05),
                    ({pygame.K_RIGHT: False, pygame.K_LEFT: False, pygame.K_UP: False, pygame.K_DOWN: False,
                      pygame.K_SPACE: False}, 1)]
         test_level_map = [
@@ -24,10 +24,10 @@ class System_testting(unittest.TestCase):
             'XXX                  W      ',
             'XXXP                 WXX    ',
             'X                    W   X   ',
-            'XXXX        EXX      WBXX   ',
-            'XXXX      FXX        WB X   ',
-            'XXX    EEXXXXXXXXXXXXWXX    ',
-            'XXX EEEX  XXXXXXXXXX  XXX   ',
+            'XXXX                 WBXX   ',
+            'XXXX                 WB X   ',
+            'XXX                  WXX    ',
+            'XXX EEEEEEEEEEEEEEEE  XXX   ',
             'XXXXXXXX  XXXXXX  XX  XXXX  ',
             'XXXXXXXX  XXXXXX  XX  XXXX  ']
         res = menu.run(create_screen(), clock, pygame.event.Event(1025, {'pos': (589, 163), 'button': 1, 'touch': False,
