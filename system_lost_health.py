@@ -15,7 +15,7 @@ class System_testting(unittest.TestCase):
     def test_lost_health(self):
         actions = [
                    ({pygame.K_RIGHT: True, pygame.K_LEFT: False, pygame.K_UP: False, pygame.K_DOWN: False,
-                     pygame.K_SPACE: False}, 0.05),
+                     pygame.K_SPACE: False}, 0.02),
                    ({pygame.K_RIGHT: False, pygame.K_LEFT: False, pygame.K_UP: False, pygame.K_DOWN: False,
                      pygame.K_SPACE: False}, 1)]
         test_level_map = [
