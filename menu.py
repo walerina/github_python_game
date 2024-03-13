@@ -6,7 +6,7 @@ import sys
 
 class Menu:
     def __init__(self):
-        self.last_passed_level = 0 
+        self.last_passed_level = 0
 
     def pre_start():
         try:
@@ -98,7 +98,7 @@ class Menu:
                 if win_result == "continue":
                     if test==2:
                         return "continue"
-                    self.continue_the_game(screen, clock)
+                    self.continue_the_game(screen, clock, level_events, [], return_player, inc_time)
 
         elif result == "loose":
                 if level_events != []:
@@ -118,7 +118,7 @@ class Menu:
                 if loose_result == "continue":
                     if test==2:
                         return "continue"
-                    self.continue_the_game(screen, clock, level_events, level_structure, inc_time)
+                    self.continue_the_game(screen, clock, level_events, [], return_player, inc_time)
 
     def continue_the_game(self, screen, clock, level_events, level_structure, return_player = False, inc_time = 1, test=False):
-        self.start_the_game(screen, clock, level_events, level_structure, return_player, self.last_passed_level, inc_time)
+        self.start_the_game(screen, clock, level_events, level_structure, return_player, inc_time, zero_level=self.last_passed_level)

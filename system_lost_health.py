@@ -36,4 +36,4 @@ class System_testting(unittest.TestCase):
                      return_player=True, inc_time=10).healf, 6)
 
 if __name__ == '__main__':
-    unittest.main()        
+    unittest.main()
