@@ -25,9 +25,10 @@ class Menu:
         continue_button.draw(screen)
         exit_button.draw(screen)
         while True:
+            if dop_event:
+                test_event = dop_event     
+                pygame.event.post(test_event)
             for event in pygame.event.get():
-                if dop_event:
-                    event = dop_event
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     mouse_pos = event.__dict__['pos']
                     if new_game_button.rect.collidepoint(mouse_pos):
@@ -63,9 +64,10 @@ class Menu:
         result = "running"
         while result == "running":
             screen.fill('grey')
+            if dop_event:
+                test_event = dop_event     
+                pygame.event.post(test_event)
             for event in pygame.event.get():
-                if dop_event:
-                    event = dop_event
                 if event.type == pygame.KEYDOWN:
                     if event.key == pygame.K_RETURN:
                         if dop_event:
