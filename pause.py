@@ -13,7 +13,7 @@ class Pause:
         with open('game_data.txt') as file:
             return json.load(file)    
             
-    def pause (screen,clock,last_passed_level,dop_event = None):
+    def pause (screen,clock,last_passed_level,dop_event = None,test=0):
         
         screen.fill((0, 0, 139))
 
@@ -31,19 +31,20 @@ class Pause:
         paused = True
         
         while paused :
-            for event in pygame.event.get():
-                if dop_event:
-                        event = dop_event
+            if dop_event:
+                        #event = dop_event   
+                pygame.event.post(dop_event)    
+            for event in pygame.event.get():      
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     mouse_pos = event.__dict__['pos']
                     if continue_button.rect.collidepoint(mouse_pos):
                         paused = False
-                        if dop_event:
+                        if dop_event and test == 1:
                             return "pause" 
                     elif exit_button.rect.collidepoint(mouse_pos):
                         Pause.pre_quit(last_passed_level)
                         pygame.quit()
-                        if dop_event:
+                        if dop_event and test == 1:
                             return "exit"
                         sys.exit()
             pygame.display.update()
