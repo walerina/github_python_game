@@ -31,9 +31,10 @@ class Pause:
         paused = True
         
         while paused :
-            for event in pygame.event.get():
-                if dop_event:
-                        event = dop_event        
+            if dop_event:
+                test_event = dop_event     
+                pygame.event.post(test_event)
+            for event in pygame.event.get():     
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     mouse_pos = event.__dict__['pos']
                     if continue_button.rect.collidepoint(mouse_pos):
