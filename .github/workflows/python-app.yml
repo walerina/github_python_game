@@ -41,3 +41,6 @@ jobs:
          python system_barrier_death.py
          python system_lost_health.py
          python system_down.py
+         python system_continue.py
+         python system_increm.py
+         python system_pause.py
