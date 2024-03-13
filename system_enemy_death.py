@@ -14,7 +14,7 @@ class System_testting(unittest.TestCase):
     # Пользователь начал новую игру, добежал до середины уровня, остановился, умер от столкновения с догнавшим врагом.
     def test_enemy_death(self):
         actions = [({pygame.K_RIGHT: True, pygame.K_LEFT: False, pygame.K_UP: False, pygame.K_DOWN: False,
-                     pygame.K_SPACE: False}, 0.1)]
+                     pygame.K_SPACE: False}, 0.15)]
         test_level_map = [
             'XX                   W      ',
             'XX                   W      ',
