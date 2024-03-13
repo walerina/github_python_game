@@ -38,10 +38,9 @@ class Mess_window:
             return "Not all"
         continue_button = Button(550, 350, 100, 30, (20, 0, 0), "Продолжить")
         continue_button.draw(screen)
-        if dop_event:
-            test_event = dop_event     
-            pygame.event.post(test_event)
-        for event in pygame.event.get():        
+        for event in pygame.event.get():
+                if dop_event:
+                     event = dop_event
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     mouse_pos = event.__dict__['pos']
                     if continue_button.rect.collidepoint(mouse_pos):
@@ -58,10 +57,9 @@ class Mess_window:
         screen.blit(text, text_rect)
         continue_button = Button(550, 350, 100, 30, (20, 0, 0), "Продолжить")
         continue_button.draw(screen)
-        if dop_event:
-            test_event = dop_event     
-            pygame.event.post(test_event)
         for event in pygame.event.get():
+                if dop_event:
+                     event = dop_event
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     mouse_pos = event.__dict__['pos']
                     if continue_button.rect.collidepoint(mouse_pos):
