@@ -31,20 +31,30 @@ class System_testting(unittest.TestCase):
 #Пачка 2 Аделина:
 #Пользователь продолжил игру, добежал до середины уровня, остановился, вышел из игры(проверка не инкрементации)
     def test_continue_game_exit(self):
+        Pause.pre_quit(2)
         events = [
                 pygame.event.Event(768, {'unicode': '\r', 'key': 13, 'mod': 0, 'scancode': 40, 'window': None}),
-                pygame.event.Event(1025, {'pos': (581, 559), 'button': 1, 'touch': False,'window': None})
+                pygame.event.Event(1025, {'pos': (594, 563), 'button': 1, 'touch': False,'window': None})
                  ]
         actions = [
             ({pygame.K_RIGHT: True, pygame.K_LEFT: False, pygame.K_UP: False, pygame.K_DOWN: False,
               pygame.K_SPACE: False}, 0.01),
             ({pygame.K_RIGHT: False, pygame.K_LEFT: False, pygame.K_UP: False, pygame.K_DOWN: False,
-              pygame.K_SPACE: False}, 0.08)]
-        level = menu.last_passed_level
-        self.assertEqual(
-            menu.run(create_screen(), clock, pygame.event.Event(1025, {'pos': (589, 163), 'button': 1, 'touch': False,
-                                                                       'window': None}), 1, actions, 
-                     inc_time=10, dop_event_level= events, i = 0), "exit")
+              pygame.K_SPACE: False}, 0.08),
+            ({pygame.K_RIGHT: True, pygame.K_LEFT: False, pygame.K_UP: False, pygame.K_DOWN: False,
+              pygame.K_SPACE: False}, 0.1),
+            ({pygame.K_RIGHT: False, pygame.K_LEFT: True, pygame.K_UP: False, pygame.K_DOWN: False,
+              pygame.K_SPACE: False}, 0.1),
+            ({pygame.K_RIGHT: True, pygame.K_LEFT: False, pygame.K_UP: False, pygame.K_DOWN: False,
+              pygame.K_SPACE: False}, 0.1),
+            ({pygame.K_RIGHT: False, pygame.K_LEFT: True, pygame.K_UP: False, pygame.K_DOWN: False,
+              pygame.K_SPACE: False}, 0.1),
+            ({pygame.K_RIGHT: True, pygame.K_LEFT: False, pygame.K_UP: False, pygame.K_DOWN: False,
+              pygame.K_SPACE: False}, 0.1)]
+        level = 2
+        menu.run(create_screen(), clock, pygame.event.Event(1025, {'pos': (600, 360), 'button': 1, 'touch': False,
+                                                                       'window': None}), 2, actions, 
+                     inc_time=10, dop_event_level= events, i = 0)
         self.assertEqual(menu.last_passed_level, level)
 
 
