@@ -92,8 +92,6 @@ class Menu:
             pygame.display.update()
             clock.tick(60 * inc_time)
         if result == "win": #!
-                if level_events != []:
-                    return result
                 mess_window = Mess_window()
                 win_result = "waiting"
                 while win_result == "waiting":
@@ -102,6 +100,8 @@ class Menu:
                     last_passed_level_param = [self.last_passed_level]
                     win_result = mess_window.win(last_passed_level_param, screen)
                     self.last_passed_level = last_passed_level_param[0]
+                    if level_events != []:
+                        return result
                     if test==3:
                         return self.last_passed_level
                     pygame.display.update()

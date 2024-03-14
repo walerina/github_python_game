@@ -32,27 +32,25 @@ class System_testting(unittest.TestCase):
 #Прошёл уровень 3 и продолжил с 0
     def test_pass_3level_and_continue0(self):
         Pause.pre_quit(2)
-        menu.last_passed_level=2
 
         actions = [
                    ({pygame.K_RIGHT: True, pygame.K_LEFT: False, pygame.K_UP: False, pygame.K_DOWN: False,
-                     pygame.K_SPACE: False}, 0.03),
+                     pygame.K_SPACE: False}, 0.04),
                    ({pygame.K_RIGHT: False, pygame.K_LEFT: False, pygame.K_UP: False, pygame.K_DOWN: False,
                      pygame.K_SPACE: False}, 1)]
         test_level_map = [
-            'XX                   W      ',
-            'XX                   W      ',
-            'XXX                  W      ',
-            'XXXP                 WXX    ',
-            'X                    W   X   ',
-            'XXXX                 WBXX   ',
-            'XXXX                 WB X   ',
-            'XXX                  WXX    ',
-            'XXX EWEEEEEEEEEEEE  XXX   ',
+            'XX                          ',
+            'XX                          ',
+            'XXX                         ',
+            'XXXP X                XX    ',
+            'X    X                   X   ',
+            'XXXXWXXXXXXXXXXXXXXXXXXBXX   ',
+            'XXXX                  B X   ',
+            'XXX                   XX    ',
+            'XXXXXXXXXXXXXXXXXXX  XXX   ',
             'XXXXXXXX  XXXXXX  XX  XXXX  ',
             'XXXXXXXX  XXXXXX  XX  XXXX  ']
-
-        menu.run(create_screen(), clock, pygame.event.Event(1025, {'pos': (589, 163), 'button': 1, 'touch': False,
+        menu.run(create_screen(), clock, pygame.event.Event(1025, {'pos': (600, 360), 'button': 1, 'touch': False,
                                                                        'window': None}), 2, actions, test_level_map,
                      inc_time=10)
         self.assertEqual(menu.last_passed_level, 0)
