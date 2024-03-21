@@ -61,7 +61,7 @@ class Menu:
         test = 0
         if level_structure == []:
             level_structure = level_maps[zero_level]
-        level = Level(level_structure, screen)
+        self.level = Level(level_structure, screen)
         result = "running"
         while result == "running":
             screen.fill('grey')
@@ -84,7 +84,7 @@ class Menu:
                         if test == 1:
                             return Pause.pause(screen,clock,self.last_passed_level, dop_event2, test)
                         Pause.pause(screen,clock,self.last_passed_level, dop_event2, test)
-            result = level.run(screen, level_events, return_player, inc_time)
+            result = self.level.run(screen, level_events, return_player, inc_time)
             if return_player and result != "running":
                 return result
             if test !=0:

@@ -44,3 +44,7 @@ jobs:
          python system_continue.py
          python system_increm.py
          python system_pause.py
+         python system_scroll.py
+         python system_test_linear_increment.py
+         python system_win_continue.py
+         python system_obstacle_destruction.py
